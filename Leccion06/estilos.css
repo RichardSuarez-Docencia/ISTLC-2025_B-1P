@@ -1,0 +1,38 @@
+*{
+    font-size: xx-large;
+    color: aqua;
+}
+
+p {
+    color: red;
+}
+
+#parrafoDos{
+    color: blue;
+}
+
+#parrafoTres{
+    color: green;
+}
+
+.parrafo{
+    background-color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 15px solid black;
+}
+
+.parrafoDos{
+    background-color: rgb(64, 255, 0);
+    font-family: 'Times New Roman', Times, serif;
+    border: 15px solid black;
+}
+
+
+h1, h2, h3,h4,h5,h6, span,a {
+    color: darkblue;
+}
+
+/*p.parrafoSubclase{
+    background-color: green;
+    color: yellow;
+}*/

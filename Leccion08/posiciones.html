@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posiciones</title>
+    <style>
+        .elemento {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+        .contenedor{
+            position: relative;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .cajaDerecha{
+            background-color: red;
+            float: right;
+            width: 30%;
+        }
+        .cajaIzquierda{
+            background-color: green;
+            float: left;
+            width: 30%;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;padding: 0;">
+    <nav style="width: 100;margin: 0;padding: 12px; background-color: brown;">
+        <a href="">Inicio</a>
+        <a href="">Contacto</a>
+        <a href="">Acerca De</a>
+    </nav>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum deleniti nostrum sit illo odit aliquid officiis
+        quasi vitae eligendi modi ad rem natus nesciunt totam quibusdam, impedit fuga molestias voluptate?
+    </div>
+    <div class="contenedor">
+        Soy Contenedor
+        <div class="elemento" style="background-color: aquamarine; width: 300px;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni cupiditate porro quia nam optio
+            recusandae, quas harum amet? Magnam perferendis illum accusamus debitis ratione? Ipsa ad est inventore
+            numquam.
+        </div>
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum deleniti nostrum sit illo odit aliquid officiis
+        quasi vitae eligendi modi ad rem natus nesciunt totam quibusdam, impedit fuga molestias voluptate?
+    </div>
+    
+    <div class="cajaDerecha">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, autem unde laudantium fugiat earum rerum. Qui ratione, harum quis rem unde, quia ut quasi incidunt, labore dolorum excepturi blanditiis magnam!</p>
+    </div>
+
+    <div class="cajaIzquierda">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae obcaecati corporis fugit deserunt repellat voluptates. Nemo non cumque, ad eum sapiente, ipsa eaque mollitia, sint dolores perferendis delectus earum in?</p>
+    </div>
+
+</body>
+
+</html>

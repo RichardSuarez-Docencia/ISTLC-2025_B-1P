@@ -1,0 +1,27 @@
+.linear-basic {
+    background: linear-gradient(to right, #dd2476, #4568dc);
+}
+
+.linear-multi {
+    background: linear-gradient(to right, #ff512f, #dd2476, #4568dc);
+}
+
+.diagonal {
+    background: linear-gradient(135deg, #00c6fb, #005bea);
+}
+
+.radial {
+    background: radial-gradient(circle, #f7b733, #fc4a1a);
+}
+
+.conic {
+    background: conic-gradient(from 45deg, #8a2387, #e94057, #f27121, #8a2387);
+}
+
+
+.stack-sans-notch {
+  font-family: "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
