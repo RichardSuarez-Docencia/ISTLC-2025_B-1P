@@ -1,7 +1,7 @@
 {
   "cajeros": [
     {
-      "id_cajero": 1,
+      "id": 1,
       "usuario": "admin",
       "contrasena": "1234",
       "nombre": "Richard",
