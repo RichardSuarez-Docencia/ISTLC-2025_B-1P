@@ -1,7 +1,7 @@
 {
   "cajeros": [
     {
-      "id_cajero": 1,
+      "id": 1,
       "usuario": "admin",
       "contrasena": "1234",
       "nombre": "Richard",
@@ -11,12 +11,12 @@
 
   "productos": [
     {
-      "id_producto": 1,
+      "id": 1,
       "descripcion": "Gaseosa",
       "precio": 1.50
     },
     {
-      "id_producto": 2,
+      "id": 2,
       "descripcion": "Snack",
       "precio": 0.80
     }
@@ -24,7 +24,7 @@
 
   "facturas": [
     {
-      "id_factura": 1,
+      "id": 1,
       "numero_factura": "F001-0001",
       "fecha": "2025-11-29T10:00:00",
       "id_cajero": 1,
@@ -37,17 +37,17 @@
 
   "factura_detalle": [
     {
-      "id_detalle": 1,
-      "id_factura": 1,
-      "id_producto": 1,
+      "id": 1,
+      "id": 1,
+      "id": 1,
       "cantidad": 1,
       "precio_unitario": 1.50,
       "subtotal_linea": 1.50
     },
     {
-      "id_detalle": 2,
-      "id_factura": 1,
-      "id_producto": 2,
+      "id": 2,
+      "id": 1,
+      "id": 2,
       "cantidad": 1,
       "precio_unitario": 0.80,
       "subtotal_linea": 0.80
