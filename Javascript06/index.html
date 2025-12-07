@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <form id="formulario">
+
+        <label for="">Nombre:</label><input  name="nombre" id="idNombre">
+        <br>
+        <label for="">Apellido</label><input type="text" name="Apellido" id="idApellido">
+    </form>
+    
+    <button onclick="guardarPersona()">Guardar</button>
+
+    <div id="respuesta"></div>
+
+    <table style="border: 1px solid blue;">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody id="detalle">
+            
+        </tbody>
+    </table>
+
+    
+</body>
+</html>
