@@ -10,15 +10,25 @@ let productos = [
 let arregloAgregadoProducto = [];
 
 function buscarAgregarProducto(){
-    let obtenerCodigoProducto = document.getElementById('idProducto').value;
+    let obtenerCodigoProducto = document.getElementById('idProducto').value || "";
     console.log(obtenerCodigoProducto);
 
-    let productoEncontrado = productos.find(x => x.codigo == obtenerCodigoProducto);
-    console.log(productoEncontrado);
-
-    arregloAgregadoProducto.push(productoEncontrado);
-    calcularValores();
-    renderizarTabla();
+    if(obtenerCodigoProducto == "" || undefined || null ){
+        console.log("error");
+        notificacionProducto("Por favor ingrese el código de un producto","alert","alert-danger")
+    }else{
+        let productoEncontrado = productos.find(x => x.codigo == obtenerCodigoProducto);
+        console.log(productoEncontrado);
+        if(productoEncontrado){
+        arregloAgregadoProducto.push(productoEncontrado);
+        calcularValores();
+        renderizarTabla();
+        }else{
+            notificacionProducto("Producto no fue encontrado en stock","alert","alert-warning")
+        }
+        
+    }
+    
 }
 
 function renderizarTabla(){
@@ -50,9 +60,39 @@ function calcularValores(){
     document.getElementById('idIva').value = '$ ' + ivaCobrado.toFixed(2);
     let sumaTotal = sumaSubtotal + ivaCobrado;
     document.getElementById('idTotal').value = '$ ' + sumaTotal.toFixed(2);
+    return sumaTotal;
 }
 
 function eliminarProducto(index){
     arregloAgregadoProducto.splice(index,1);
      renderizarTabla();
+     calcularValores();
+}
+
+
+document.getElementById("idValorRecibido").addEventListener('input', function (){
+    calcularValoresCambio();
+})
+
+function calcularValoresCambio(){
+     let valorRecibido = parseFloat(document.getElementById("idValorRecibido").value).toFixed(2) || 0;
+    ///let valorTotal = parseFloat(document.getElementById("idTotal").value) || 0;
+
+    let cambio = valorRecibido - calcularValores();
+
+    document.getElementById("idCambio").value = "$ " + cambio.toFixed(2);
+}
+
+function notificacionProducto(nombreAlerta,claseUno,claseDos){
+    document.getElementById("idAlertaNotificacion").classList.add(claseUno,claseDos);
+    document.getElementById("idAlertaNotificacion").innerHTML = nombreAlerta;
+
+    setTimeout(() => {
+        document.getElementById("idAlertaNotificacion").classList.remove(claseUno,claseDos);
+        document.getElementById("idAlertaNotificacion").innerHTML = "";
+    }, 3000);
+}
+
+function pagar(){
+    window.print();
 }
