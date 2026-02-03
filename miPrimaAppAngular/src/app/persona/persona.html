@@ -1,1 +1,155 @@
-<p>Hola soy el Componente persona works!</p>
+<h1>Componente Padre</h1>
+<div style="width: 30%; margin: 30px;">
+  <!-- Cards with media area -->
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Small</mat-card-subtitle>
+      <img mat-card-sm-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+   holaaaaaa
+  </mat-card-content>
+</mat-card>
+
+   <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+<div style="width: 30%; margin: 30px;">
+   <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+<div style="width: 30%; margin: 30px;">
+   <mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button matButton>LIKE</button>
+    <button matButton>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+
+<button class="btn btn-primary" routerLink="/estudiante/hombre">Ir a Hijo</button>
+<button class="btn btn-danger" routerLink="/estudiante/mujer">Ir a Hija</button>
+
+<h2>A partir de aqui se van a renderizar los componentes Hijos, con el router outlet</h2>
+<button (click)="regresarPaginaAnterior()">regresar</button>
+<router-outlet></router-outlet>
+<!--<h1>Registro de Estudiante</h1>
+
+<div style="margin: 25px;">
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Id</label>
+    <input [(ngModel)]="id" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el id">
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input [(ngModel)]="nombre" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el nombre">
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+        <input [(ngModel)]="apellido" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el apellido">
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Edad</label>
+        <input [(ngModel)]="edad" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese la edad">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" (click)="guardarEstudiante()">Guardar Estudiante</button>
+  </div>
+</div>
+
+<div class="alert alert-info">
+  {{nombre}}
+</div>
+
+<h1>Listado de Registro de Persona</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (estudiante of estudiates; track $index)
+    {
+    <tr>
+      <th scope="row">{{estudiante.id}}</th>
+      <td>{{estudiante.nombre}}</td>
+      <td>{{estudiante.apellido}}</td>
+      <td>{{estudiante.edad}}</td>
+      <td>
+        <button class="btn btn-dark" routerLink="/editarEstudiante/{{estudiante.id}}">Editar</button>
+        <button class="btn btn-danger" (click)="eliminar($index)">Eliminar</button>
+      </td>
+    </tr>
+    }@empty {
+    <div class="alert alert-danger">Sin estudiantes qué mostrar</div>
+    }
+  </tbody>
+</table>-->
+
+

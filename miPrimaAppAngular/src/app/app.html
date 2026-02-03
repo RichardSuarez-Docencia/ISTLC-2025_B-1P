@@ -1,9 +1,67 @@
-<h1>Hola mundo en Angular</h1>
+<app-navbar></app-navbar>
 
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
-<app-persona></app-persona>
+<div style="margin: 35px;">
+    <router-outlet></router-outlet>
+</div>
+
+
+<!-- 
+ <h1>Pipes en Angular</h1>
+
+<button class="btn btn-primary">Aceptar</button>
+<button class="btn btn-warning">Aceptar</button>
+<button class="btn btn-success">Aceptar</button>
+<button class="btn btn-danger">Aceptar</button>
+<button class="btn btn-dark">Aceptar</button>
+
+    <app-persona></app-persona>
+
+<h1>Interpolación en Angular</h1>
+<h2>{{tituloPeriodico}}</h2>
+
+    <p>{{persona[2].nombre}}</p>
+    <p>{{persona[0].nombre}}</p>
+    <p>{{persona[1].nombre}}</p>
+
+    <h3>{{variableTexto | uppercase}}</h3>
+    <h3>{{variableTextoMinuscula | lowercase}}</h3>
+    <h3>{{valorTotal.toString()| currency:'EUR'}}</h3>
+    <h3>{{ '0.10' | percent}}</h3>
+    <h3>{{ 3.14159 | number:'1.2-2'}}</h3>
+    <h3>{{ '1/10/2026' | date: 'short'}}</h3>
+
+    <div *ngIf="edad == 18"> 
+        <h1>Es mayor de edad</h1>
+    </div>
+
+    @if (edad == 18 ) {
+        <div style="width: 200px;">
+            <div class="alert alert-success">Es mayor de edad</div>
+        </div>
+    }@else {
+        <div style="width: 200px;">
+            <div class="alert alert-danger">No es mayor de edad</div>
+        </div>
+    }
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of estudiates">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.nombre}}</td>
+      <td>{{item.apellido}}</td>
+      <td>{{item.edad}}</td>
+    </tr>
+  </tbody>
+</table>
+-->
+
+    
