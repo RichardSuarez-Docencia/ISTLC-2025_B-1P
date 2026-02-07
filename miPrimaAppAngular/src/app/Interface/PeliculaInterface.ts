@@ -7,8 +7,8 @@ export interface IPelicula {
 }
 
 export interface IGenero{
-    id: number;
-    nombre: string;
+    id?: number;
+    nombre?: string;
 }
 
 export interface IActor{
