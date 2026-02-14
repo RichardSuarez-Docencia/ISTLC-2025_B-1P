@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IGenero } from './Interface/PeliculaInterface';
+import { IGenero, IGeneroResponse } from './Interface/PeliculaInterface';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +14,16 @@ export class PeliculaService {
     return this.http.get<IGenero[]>(this.url);
   }
 
-  guardarGenero(genero: IGenero): Observable<IGenero>{
+  GuardarGenero(genero: IGenero): Observable<IGeneroResponse>{
     return this.http.post<IGenero>(this.url,genero);
+  }
+
+  EditarGenero(genero: IGenero): Observable<IGeneroResponse>{
+    return this.http.put<IGenero>(`${this.url}/${genero.idGenero}`,genero);
+  }
+
+  EliminarGenero(id: number): Observable<IGeneroResponse>{
+    return this.http.delete(`${this.url}/${id}`);
   }
 
 }

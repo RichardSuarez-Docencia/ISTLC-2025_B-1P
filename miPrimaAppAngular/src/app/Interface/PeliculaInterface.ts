@@ -7,8 +7,13 @@ export interface IPelicula {
 }
 
 export interface IGenero{
-    id?: number;
+    idGenero?: number;
     nombre?: string;
+}
+
+export interface IGeneroResponse{
+    idGenero?: number;
+    mensaje?: string;
 }
 
 export interface IActor{

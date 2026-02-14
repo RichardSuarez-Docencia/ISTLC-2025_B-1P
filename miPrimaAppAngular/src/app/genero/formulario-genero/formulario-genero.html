@@ -1,0 +1,12 @@
+<form (submit)="guardar()" [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Genero</mat-label>
+        <input formControlName="nombre" matInput>
+        <mat-error>{{obtenerMensajeError()}}</mat-error>
+    </mat-form-field>
+
+    <div>
+    <button type="submit" matButton="filled" [disabled]="form.invalid">Guadar</button>
+    <button matButton="filled" style="background-color: red;" routerLink="/genero">Cancelar</button>
+    </div>
+</form>

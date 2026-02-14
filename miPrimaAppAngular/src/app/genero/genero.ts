@@ -6,14 +6,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { IGenero, IPelicula } from '../Interface/PeliculaInterface';
 import { RouterLink } from "@angular/router";
 import { PeliculaService } from '../pelicula-service';
-
-const ELEMENT_DATA: IGenero[] = [
-  {id: 1, nombre: 'Acción'},
-  {id: 2, nombre: 'Animación'},
-  {id: 3, nombre: 'Anime'},
-  {id: 4, nombre: 'Mudo'},
-  {id: 5, nombre: 'Ciencia Ficción'},
-];
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-genero',
@@ -44,4 +37,19 @@ export class Genero implements OnInit{
     });
   }
 
+  eliminarGenero(id: number){
+    console.log(id);
+    this.peliculaService.EliminarGenero(id).subscribe(data =>{
+      this.mostrarAlerta(data.mensaje!);
+      this.obtenerGeneros();
+    });
+  }
+
+  mostrarAlerta(mensaje: string) {
+      Swal.fire({
+        title: mensaje,
+        icon: "success",
+        draggable: true
+      });
+    }
 }

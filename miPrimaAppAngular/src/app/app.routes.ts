@@ -9,6 +9,7 @@ import { Pelicula } from './listadopelicula/pelicula/pelicula';
 import { Genero } from './genero/genero';
 import { Actor } from './actor/actor';
 import { CrearGenero } from './genero/crear-genero/crear-genero';
+import { EditarGenero } from './genero/editar-genero/editar-genero';
 
 export const routes: Routes = [
     { path:'', redirectTo: '/inicio' , pathMatch: 'full' },
@@ -16,6 +17,7 @@ export const routes: Routes = [
     { path:'pelicula', component: Pelicula },
     { path:'genero', component: Genero },
     { path:'crearGenero', component: CrearGenero },
+    { path:'editarGenero/:id', component: EditarGenero },
     { path:'actor', component: Actor },
 
     { path:'estudiante', component: Persona},

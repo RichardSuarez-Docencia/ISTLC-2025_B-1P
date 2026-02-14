@@ -24,8 +24,8 @@
   <ng-container matColumnDef="accion">
     <th mat-header-cell *matHeaderCellDef> Acción </th>
     <td mat-cell *matCellDef="let element"> 
-        <button matButton="filled">Editar</button> 
-        <button matButton="filled" style="background-color: red;">Eliminar</button> </td>
+        <button matButton="filled" routerLink="/editarGenero/{{element.idGenero}}">Editar</button> 
+        <button matButton="filled" style="background-color: red;" (click)="eliminarGenero(element.idGenero)">Eliminar</button> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
