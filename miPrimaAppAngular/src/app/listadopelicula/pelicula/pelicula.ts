@@ -1,28 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { IPelicula } from '../../Interface/PeliculaInterface';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RouterLink } from '@angular/router';
+import { PeliculaService } from '../../pelicula-service';
 
-const ELEMENT_DATA: IPelicula[] = [
-  {id: 1, nombre: 'Rapidos Furiosos', poster:'url',duracion:'2 horas', descripcion: 'Bonita Pelicula' },
-  {id: 1, nombre: 'Bob Esponja', poster:'url',duracion:'2 horas', descripcion: 'Bonita Pelicula' },
-  {id: 1, nombre: 'El regreso de Calamardo', poster:'url',duracion:'2 horas', descripcion: 'Bonita Pelicula' },
-  {id: 1, nombre: 'Patricio Estrella', poster:'url',duracion:'2 horas', descripcion: 'Bonita Pelicula' },
-  {id: 1, nombre: 'Viernes 13', poster:'url',duracion:'2 horas', descripcion: 'Bonita Pelicula' },
-];
 
 @Component({
   selector: 'app-pelicula',
-  imports: [MatButtonModule,MatFormFieldModule, MatInputModule, MatTableModule],
+  imports: [MatButtonModule,MatFormFieldModule, MatInputModule, MatTableModule, RouterLink],
   templateUrl: './pelicula.html',
   styleUrl: './pelicula.css',
 })
-export class Pelicula {
+export class Pelicula implements OnInit{
+  displayedColumns: string[] = ['idPelicula', 'nombrePelicula', 'poster', 'genero', 'descripcion', 'trailer', 'actores', 'accion'];
+  dataSource = new MatTableDataSource();
 
-  displayedColumns: string[] = ['id', 'nombre', 'poster', 'duracion', 'descripcion', 'accion'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  servicePelicula = inject(PeliculaService);
+
+  ngOnInit(): void {
+    this.servicePelicula.obtenerPeliculas().subscribe(data => {
+      console.log(data);
+      this.dataSource.data = data;
+    });
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

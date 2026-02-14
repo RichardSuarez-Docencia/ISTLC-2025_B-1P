@@ -1,1 +1,37 @@
-<p>crearpelicula works!</p>
+<h2>Crear Película</h2>
+
+<form class="example-form" [formGroup]="form">
+  <mat-form-field class="example-full-width">
+    <mat-label>nombre</mat-label>
+    <input formControlName="nombre" matInput placeholder="Ex. Pizza" value="Sushi" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>poster</mat-label>
+    <input formControlName="poster" matInput placeholder="Ex. Pizza" value="Sushi" />
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Genero</mat-label>
+    <mat-select formControlName="idGenero">
+      @for (genero of listaGenero; track genero.idGenero) {
+        <mat-option [value]="genero.idGenero">{{ genero.nombre }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>trailer</mat-label>
+    <input formControlName="trailer" matInput placeholder="Ex. Pizza" value="Sushi" />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Descripción</mat-label>
+    <textarea formControlName="descripcion" matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+
+  <div>
+    <button matButton="filled" style="background-color: red; margin-right: 5px;">Cancelar</button>
+    <button matButton="filled" (click)="guardar()">Guadar</button>
+  </div>
+</form>

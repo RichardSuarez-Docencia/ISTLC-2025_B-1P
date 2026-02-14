@@ -16,16 +16,16 @@ export class FormularioGenero implements OnInit {
   @Input() InputGenero?: IGenero;
   @Output() posteoFormulario = new EventEmitter<IGenero>
 
+  ngOnInit(): void {
+    if(this.InputGenero){
+      this.form.patchValue({nombre: this.InputGenero.nombre});
+    }  
+  }
+
   private formbuilder = inject(FormBuilder);
   form = this.formbuilder.group({
     nombre: ['', { validators: [Validators.required], }],
   });
-
-  ngOnInit(): void {
-    if(this.InputGenero != null){
-      this.form.patchValue({nombre: this.InputGenero.nombre});
-    }  
-  }
 
     obtenerMensajeError() {
       const error = this.form.controls.nombre;

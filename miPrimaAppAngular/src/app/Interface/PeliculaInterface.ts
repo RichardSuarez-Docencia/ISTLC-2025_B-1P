@@ -23,3 +23,26 @@ export interface IActor{
     fechaNacimiento: string;
     nacionalidad: string;
 }
+
+export interface ICrearPelicula {
+    nombre:      string;
+    poster:      string;
+    idGenero:    number;
+    descripcion: string;
+    trailer:     string;
+}
+
+export interface ICrearPeliculaResponse {
+    idPelicula: number;
+    mensaje:    string;
+}
+
+export interface IPeliculaResponse {
+    idPelicula:     number;
+    nombrePelicula: string;
+    poster:         string;
+    genero:         string;
+    descripcion:    string;
+    trailer:        string;
+    actores:        null | string;
+}
