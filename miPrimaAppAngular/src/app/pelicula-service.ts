@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICrearPelicula, ICrearPeliculaResponse, IGenero, IGeneroResponse, IPeliculaResponse } from './Interface/PeliculaInterface';
+import { IActorResponse, IAsignacionAp, ICrearPelicula, ICrearPeliculaResponse, IGenero, IGeneroResponse, IPeliculaResponse } from './Interface/PeliculaInterface';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,7 @@ export class PeliculaService {
   private url = 'http://cine.runasp.net/';//http://cine.runasp.net/api/Peliculas
   private endpointPelicula = this.url + "api/Peliculas";
   private endpointGenero = this.url + "api/Generos"
+  private endpointActor = this.url + "api/Actores"
 
   private urlPelicula = "http://cine.runasp.net/api/Peliculas"
   obtenerGenero(): Observable<IGenero[]>{
@@ -35,5 +36,15 @@ export class PeliculaService {
 
   obtenerPeliculas(): Observable<IPeliculaResponse[]>{
     return this.http.get<IPeliculaResponse[]>(this.endpointPelicula);
+  }
+
+  obtenerAcotres(): Observable<IActorResponse[]>{
+    return this.http.get<IActorResponse[]>(this.endpointActor);
+  }
+
+  
+
+  GuardarAsignacionActorPelicula(asignacion: IAsignacionAp): Observable<any>{
+    return this.http.post<any>(`http://cine.runasp.net/api/Peliculas/${asignacion.idPelicula}/actores/${asignacion.idActor}`,null);
   }
 }

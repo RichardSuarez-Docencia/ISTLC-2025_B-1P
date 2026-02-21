@@ -46,3 +46,17 @@ export interface IPeliculaResponse {
     trailer:        string;
     actores:        null | string;
 }
+
+export interface IActorResponse {
+    idActor:         number;
+    nombre:          string;
+    imagen:          string;
+    fechaNacimiento: Date;
+    nacionalidad:    string;
+}
+
+
+export interface IAsignacionAp {
+    idActor: number;
+    idPelicula: number;
+}

@@ -11,12 +11,14 @@ import { Actor } from './actor/actor';
 import { CrearGenero } from './genero/crear-genero/crear-genero';
 import { EditarGenero } from './genero/editar-genero/editar-genero';
 import { Crearpelicula } from './listadopelicula/crearpelicula/crearpelicula';
+import { AsignarActor } from './listadopelicula/asignar-actor/asignar-actor';
 
 export const routes: Routes = [
     { path:'', redirectTo: '/inicio' , pathMatch: 'full' },
     { path:'inicio', component: Inicio },
     { path:'pelicula', component: Pelicula },
     { path:'crearPelicula', component: Crearpelicula },
+    { path:'asignarActor', component: AsignarActor },
     { path:'genero', component: Genero },
     { path:'crearGenero', component: CrearGenero },
     { path:'editarGenero/:id', component: EditarGenero },

@@ -1,0 +1,26 @@
+<h2>Asignar Actor a Película</h2>
+
+<form class="example-form" [formGroup]="form">
+  <mat-form-field style="width: 100%;">
+    <mat-label>Actores</mat-label>
+    <mat-select formControlName="idActor">
+      @for (actor of listaActores; track actor.idActor  ) {
+        <mat-option [value]="actor.idActor">{{ actor.nombre   }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <mat-label>Peliculas</mat-label>
+    <mat-select formControlName="idPelicula">
+      @for (pelicula of listaPeliculas; track pelicula.idPelicula) {
+        <mat-option [value]="pelicula.idPelicula">{{ pelicula.nombrePelicula }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <button matButton="filled" style="background-color: red; margin-right: 5px;">Cancelar</button>
+    <button matButton="filled" (click)="guardar()">Guadar</button>
+  </div>
+</form>
